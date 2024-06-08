@@ -1,1 +1,9 @@
-# qa_python
+test_add_new_book Тест на добавление новой книги
+test_add_new_book_name_length_limit Проверка длины имени превышающей лимит
+test_set_book_genre Установка жанра книге
+test_get_books_with_specific_genre Полученеие книг по жанру
+test_get_books_for_children Получение книги для детей
+test_add_book_in_favorites Добавление в избранное
+test_delete_book_from_favorites Удаление из избранного
+test_new_book_without_genre Проверка книги без жанра
+test_books_with_age_rating_not_in_children_list Проверка книги на отстутсвие ее в списке для детей
