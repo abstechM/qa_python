@@ -7,3 +7,4 @@ test_add_book_in_favorites Добавление в избранное
 test_delete_book_from_favorites Удаление из избранного
 test_new_book_without_genre Проверка книги без жанра
 test_books_with_age_rating_not_in_children_list Проверка книги на отстутсвие ее в списке для детей
+test_set_book_genre_1 Проверка на установку жанра книге через парамтризованный тест
