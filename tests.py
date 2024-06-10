@@ -1,3 +1,5 @@
+import pytest
+
 from main import BooksCollector
 
 # класс TestBooksCollector объединяет набор тестов, которыми мы покрываем наше приложение BooksCollector
@@ -21,7 +23,7 @@ class TestBooksCollector:
     #2 Проверка превышения длины наименования книги
     def test_add_new_book_name_length_limit(self):
         collector = BooksCollector()
-        long_book_name = "а" * 42  # создаем имя книги, превышающее ограничение длины
+        long_book_name = "а" * 50  # создаем имя книги, превышающее ограничение длины
         collector.add_new_book(long_book_name)
         assert long_book_name not in collector.get_books_genre().keys()
 
@@ -73,3 +75,11 @@ class TestBooksCollector:
         collector.add_new_book("Гарри Поттер")
         collector.set_book_genre("Гарри Поттер", "Ужасы")
         assert "Гарри Поттер" not in collector.get_books_for_children()
+
+    #10 Проверка что жанр установился книге
+    @pytest.mark.parametrize("name, genre",[["1984", "Фантастика"], ["Dracula", "Ужасы"], ["Sherlock Holmes", "Детективы"]])
+    def test_set_book_genre_1(self, name, genre):
+        collector = BooksCollector()
+        collector.add_new_book(name)
+        collector.set_book_genre(name, genre)
+        assert collector.get_book_genre(name) == genre
